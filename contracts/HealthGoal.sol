@@ -20,7 +20,7 @@ contract HealthGoal {
 	string private goal;
 	uint private deadline;
 
-	ProviderRegistry providerRegistry;
+	ProviderRegistry providerRegistry = new ProviderRegistry("Provider IncentHealth"); //need way to control provider; should this be done at construction? need to figure out how providers are defined for a patient; who defines them?
 
 	function HealthGoal(address patient_id, address patient_wallet, string _goal, ProviderRegistry _providerRegistry, uint _deadline) public {
 		patient = Patient(patient_id, patient_wallet);

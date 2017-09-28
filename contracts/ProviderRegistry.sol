@@ -22,7 +22,7 @@ contract ProviderRegistry {
 	}
 
 	function isVerifiedProvider(address provider) public returns (bool) {
-		return (bytes(providerMap[provider].name) != 0);
+		return (bytes(providerMap[provider].name).length != 0);
 	}
 
 }
