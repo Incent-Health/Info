@@ -2,9 +2,14 @@ pragma solidity ^0.4.4;
 
 import "./ProviderRegistry.sol";
 
+/*
+HealthGoal contract is created whenever a patient signs up for an
+incentive program. In this paradigm, Patients belong to HealthGoals,
+or an incentive program
+*/
 contract HealthGoal {
-
-	event ReceivedFunding(address payor, uint amount);
+	
+	event ReceivedFunding(address payor, uint amount); //Logs payments to transaction log, useful for JS integration, watching for these...?
 
 	struct Patient {
 		address id;
@@ -12,9 +17,7 @@ contract HealthGoal {
 	}
 
 	Patient private patient;
-
 	string private goal;
-
 	uint private deadline;
 
 	ProviderRegistry providerRegistry;
@@ -24,6 +27,10 @@ contract HealthGoal {
 		goal = _goal;
 		deadline = _deadline;
 	}
+
+/*
+Modifiers
+*/
 
 	modifier onlyProvider() {
 		require(providerRegistry.isVerifiedProvider(msg.sender));
@@ -44,6 +51,8 @@ contract HealthGoal {
 		require(now > deadline);
 		_;
 	}
+
+
 
 	function fund() public payable {
 		ReceivedFunding(msg.sender, msg.value);
