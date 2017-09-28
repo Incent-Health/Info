@@ -52,9 +52,7 @@ Modifiers
 		_;
 	}
 
-
-
-	function fund() public payable {
+	function fund() public payable { //could rewardGoal be more expressive of a function name?
 		ReceivedFunding(msg.sender, msg.value);
 	}
 
