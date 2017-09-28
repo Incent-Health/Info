@@ -28,7 +28,7 @@ function sendPatientDatatoMySQL(){
         //         document.getElementById("txtHint").innerHTML = this.responseText;
         //     }
         // };
-        xmlhttp.open("GET","patientToServer.php?q="+str,true);
+        xmlhttp.open("GET","patientToServer.php?name=" + name + "?email=" + email + "?address=" + address,true);
         xmlhttp.send();
 
 }
@@ -42,3 +42,6 @@ function sendPatientDatatoMySQL(){
 //IncentHealth
 //incenthealth1@gmail.com
 //incenthealth404
+
+
+//address 0x1702c51f3db95ddd417514adc9b93f62ff593d5b
