@@ -1,19 +1,22 @@
 pragma solidity ^0.4.4;
 
 contract PatientContract {
+//should this be made into a library for OOP practices? Is it necessary?
 
-	address ProviderAdmin; 
+	address ProviderAdmin; //multiple providers work with multiple patients... should be more of all providers | all patients, maybe keep patient/provider info in struct Patient and then require that the Patient to match up with the sender... maybe only add Patient if within array of address ProviderAdmins, which are intialized on contract creation
 
-	mapping (address => Patient) patientMap;
+	public mapping (address => Patient) patientMap;
 
-	function PatientContract() payable {
+	function PatientContract() {
 		ProviderAdmin = msg.sender;
 	}
 
 	struct Patient {
 		string name;
 		string email;
-		bytes32 incentivetype; //should make this an enum
+		address walletAddress; //uPort ID can't into wallet payments
+		bytes32 incentiveType; //should make this an enum
+		int256 payAmount; //amount patient is consistently paid
 	}
 
 	modifier onlyProvider() {
@@ -26,7 +29,7 @@ contract PatientContract {
 		_;
 	}
 
-	function addPatient(address patientAdd, string n, string e, bytes32 it) onlyProvider returns (bool success){
+	function addPatient(address patientAdd, string name, string email, address walletAddress, bytes32 incentiveType, int256 payAmount) onlyProvider returns (bool success){
 		if(bytes(n).length != 0){
 			patientMap[patientAdd] = Patient(n, e, it);
 			return true;
