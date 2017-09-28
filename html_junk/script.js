@@ -9,9 +9,15 @@ if(typeof web3 !== 'undefined') {
 }
 
 var ethAmount = web3.eth.getBalance("0xbf2d51d1ab732f130362891e61a084e3ddba6a45");
-$(".nameInput").attr("value",ethAmount);
+$(".nameInput").value(ethAmount);
+
 
 $(".submitButton").click(function(){ 
-	console.log("CLICKED");
 
+	console.log("CLICKED: " + name + " " + email + " " + address);
 });
+
+
+//IncentHealth
+//incenthealth1@gmail.com
+//incenthealth404
