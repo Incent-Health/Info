@@ -4,7 +4,8 @@
 //ini_set('display_errors', 'on');
 
 
-	$name=($POST['name']);
+	$firstname=($POST['firstname']);
+	$lastname=($POST['lastname']);
 	$email=($POST['email']);
 	$address=($POST['address']);
 	//setting up variables
@@ -16,5 +17,5 @@
 	//Connect to server and select database
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
-	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,incentive_type,uport_address) VALUES('Aaron', 'Zheng','azheng@gmail.com','Classic','0x1702c51f3db95ddd417514adc9b93f62ff593d5b')");
+	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,uport_address) VALUES('" + firstname + "', '" + lastname + "','" + email + "','" + address + "')");
 ?>

@@ -2,11 +2,12 @@
 // var email = $(".emailInput").attr("value");
 // var address = $(".addressInput").attr("value");
 
-var name, email, address;
+var firstname, lastname, email, address;
 
 $(".submitButton").click(function(){ 
 
-	name = $(".nameInput").val();
+	firstname = $(".firstNameInput").val();
+	lastname = $(".lastNameInput").val();
 	email = $(".emailInput").val();
 	address = $(".addressInput").val();
 	console.log("CLICKED " + name + "  " + email +  "  " + address);
@@ -35,7 +36,7 @@ function sendPatientDatatoMySQL(){
  //            }
  //        };
 
-    var data = "name=" + name + "&email=" + email + "&address=" + address;
+    var data = "firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&address=" + address;
     //xmlhttp.open("POST","patientToServer.php",true);
     console.log("PHP JS MARKER");
     $.post('php/patientToServer.php', data, function(data){});
