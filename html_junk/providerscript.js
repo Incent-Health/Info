@@ -42,7 +42,7 @@ function sendPatientDatatoMySQL(){
     var data = "firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&address=" + address;
     //xmlhttp.open("POST","patientToServer.php",true);
     console.log("PHP JS MARKER");
-    $.post('php/patientToServer.php', data, function(data){});
+    $.post('php/patientToServer.php', data, function(data){console.log(data + "\n");}); //{ firstnamet: "TestName"}
     //xmlhttp.send(data);
     console.log("SENT");
 
