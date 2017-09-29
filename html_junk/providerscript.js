@@ -42,7 +42,7 @@ function sendPatientDatatoMySQL(){
     var data = "firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&address=" + address;
     //xmlhttp.open("POST","patientToServer.php",true);
     console.log("PHP JS MARKER");
-    $.post('php/patientToServer.php', data, function(data){console.log(data + "\n");}); //{ firstnamet: "TestName"}
+    $.post('php/patientToServer.php', data, function(data){console.log(data + "\n");}); //NEED WAY TO ADD CONDITIONALS, I.E. CHECK FOR DATABASE INSERT ERRORS AND REPORT APPROPRIATE RESULT TO USER
     //xmlhttp.send(data);
     console.log("SENT");
 
