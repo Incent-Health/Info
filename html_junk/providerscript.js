@@ -12,8 +12,11 @@ $(".submitButton").click(function(){
 	address = $(".addressInput").val();
 	console.log("CLICKED " + name + "  " + email +  "  " + address);
 	sendPatientDatatoMySQL();
+	console.log("INSERT INTO patientData (first_name,last_name,email,uport_address) VALUES('" + firstname + "', '" + lastname + "','" + email + "','" + address + "');");
 
 });
+
+
 
 function sendPatientDatatoMySQL(){
 
