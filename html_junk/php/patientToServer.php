@@ -1,7 +1,8 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
+
 
 	$name=($POST['name']);
 	$email=($POST['email']);
@@ -13,11 +14,7 @@ ini_set('display_errors', 'on');
 	$database="luisjgkr_IncentHealth";
 
 	//Connect to server and select database
-	mysql_connect($serverURL,$username,$password);
-	@mysql_select_db($database) or die("Unable to select database");
+	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
-	$query="INSERT INTO patientData (first_name,last_name,email,incentive_type,uport_address) VALUES('Aaron', '" + $name + "','" + $email + "','Classic','0x1702c51f3db95ddd417514adc9b93f62ff593d5b');"
-	mysql_query($query);
-
-	mysql_close();
+	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,incentive_type,uport_address) VALUES('Aaron', 'Zheng','azheng@gmail.com','Classic','0x1702c51f3db95ddd417514adc9b93f62ff593d5b')");
 ?>
