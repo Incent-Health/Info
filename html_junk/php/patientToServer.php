@@ -16,7 +16,7 @@ ini_set('display_errors', 'on');
 	mysql_connect($serverURL,$username,$password);
 	@mysql_select_db($database) or die("Unable to select database");
 
-	$query="INSERT INTO patientData (first_name,last_name,email,incentive_type,uport_address) VALUES('Aaron', '" + $name + "','" + $email + "','Classic','0x1702c51f3db95ddd417514adc9b93f62ff593d5b')";
+	$query="INSERT INTO patientData (first_name,last_name,email,incentive_type,uport_address) VALUES('Aaron', '" + $name + "','" + $email + "','Classic','0x1702c51f3db95ddd417514adc9b93f62ff593d5b');"
 	mysql_query($query);
 
 	mysql_close();
