@@ -9,7 +9,7 @@
 	use PHPMailer\PHPMailer\Exception;
 
 	//Load composer's autoloader
-	require 'vendor/autoload.php';
+	require '../vendor/autoload.php';
 
 
 	//Get info sent from providerscript.js
@@ -45,8 +45,8 @@
 	    $mail->SMTPAuth = true;                               // Enable SMTP authentication
 	    $mail->Username = 'incenthealth1@gmail.com';                 // SMTP username
 	    $mail->Password = 'incenthealth404';                           // SMTP password
-	    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	    $mail->Port = 465;                                    // TCP port to connect to
+	    $mail->SMTPSecure = 'tsl';                            // Enable TLS encryption, `ssl` also accepted
+	    $mail->Port = 587;                                    // TCP port to connect to
 
 	    //Recipients
 	    $mail->setFrom('incenthealth1@gmail.com', 'IncentHealth');
