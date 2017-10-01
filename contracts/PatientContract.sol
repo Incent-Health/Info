@@ -3,24 +3,43 @@ pragma solidity ^0.4.4;
 contract PatientContract {
 //should this be made into a library for OOP practices? Is it necessary?
 
-	address ProviderAdmin; //multiple providers work with multiple patients... should be more of all providers | all patients, maybe keep patient/provider info in struct Patient and then require that the Patient to match up with the sender... maybe only add Patient if within array of address ProviderAdmins, which are intialized on contract creation
+	address HealthAdmin; //HealthAdmin - a true authority, as we will likely need it for sensitive functions (or things like selfdestruct)
 
 	mapping (address => Patient) patientMap;
+	mapping (address => Provider) providerMap;
 
 	function PatientContract() {
-		ProviderAdmin = msg.sender;
+		HealthAdmin = msg.sender;
 	}
 
 	struct Patient {
-		string name;
+		string firstName;
+		string lastName;
 		string email;
 		address walletAddress; //uPort ID can't into wallet payments
 		bytes32 incentiveType; //should make this an enum
 		int256 payAmount; //amount patient is consistently paid
+		address providerAddress; //used as reference to provider if we need info on the provider; think primary key in RDMS design
+					//Why? ----> If we insert Provider in Patient, every time we need info on the provider, we need to go through Patient data, or worse, iterate
+	}
+
+	struct Provider {		
+		string name;
+		//address[] patientAddresses;
+	}
+
+	struct MedicalData { //maybe not needed, used in case we need to return all data with MedicalData
+		//mapping patientMap;
+		//mapping providerMap;
+	}
+
+	modifier onlyAdmin() {
+		require(msg.sender == HealthAdmin);
+		_;
 	}
 
 	modifier onlyProvider() {
-		require(msg.sender == ProviderAdmin); //modifier to restrict certain functions to provider only
+		require(bytes(providerMap[msg.sender].name).length != 0); //modifier to restrict certain functions to provider only
 		_;
 	}
 
@@ -29,9 +48,18 @@ contract PatientContract {
 		_;
 	}
 
-	function addPatient(address patientAdd, string name, string email, address walletAddress, bytes32 incentiveType, int256 payAmount) onlyProvider returns (bool success){
+	function addPatient(address patientAdd, string firstName, string lastName, string email, address walletAddress, bytes32 incentiveType, int256 payAmount, address providerAddress) onlyAdmin returns (bool success){
+		if(bytes(firstName).length != 0){ //we may not need this if SQL handles this through NOT NULL
+			patientMap[patientAdd] = Patient(firstName, lastName, email, walletAddress, incentiveType, payAmount, providerAddress);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function addProvider(address providerAddress, string name) onlyAdmin returns (bool success){
 		if(bytes(name).length != 0){
-			patientMap[patientAdd] = Patient(name, email, walletAddress, incentiveType, payAmount);
+			providerMap[providerAddress] = Provider(name); //need to add address
 			return true;
 		} else {
 			return false;
@@ -39,7 +67,11 @@ contract PatientContract {
 	}
 
 	function getPatient(address patientAdd) onlyProvider constant returns (string, string, bytes32){ //tentative on this; patientAdd shouldn't cause shadowing, but possible?
-		return (patientMap[patientAdd].name, patientMap[patientAdd].email, patientMap[patientAdd].incentiveType);
+		return (patientMap[patientAdd].firstName, patientMap[patientAdd].email, patientMap[patientAdd].incentiveType);
+	}
+
+	function rewardPatient(address patientAdd, uint amount) onlyAdmin public payable { //should be onlyProvider; gotta work on the scoping
+		patientAdd.transfer(amount);
 	}
 
 	//design issues with onlyPatient(needs to be implemented), access
