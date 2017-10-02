@@ -12,11 +12,14 @@
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
 
-	$healthprovider = $mysqli->query("SELECT health_provider FROM patientData WHERE uport_address = \"" . patientAddress . "\";");
-	$providertimestamp = $mysqli->query("SELECT provider_invite_timestamp FROM patientData WHERE uport_address = \"" . patientAddress .	 "\";");
+	$result = $mysqli->query("SELECT health_provider, provider_invite_timestamp FROM patientData WHERE uport_address = \"" . $patientAddress . "\"");
+	//echo("SELECT health_provider, provider_invite_timestamp FROM patientData WHERE uport_address = \"" . $patientAddress . "\";");
+	//$providertimestamp = $mysqli->query("SELECT provider_invite_timestamp FROM patientData WHERE uport_address = \"" . patientAddress .	 "\";");
 
-	while($row = $healthprovider->fetch_assoc()){ //really bad code
+	while($row = $result->fetch_assoc()){ //really bad code
 		echo $row['health_provider'] . "|" . $row['provider_invite_timestamp'];
 	}
+
+	//echo $row['health_provider'] . "|" . $row['provider_invite_timestamp'];
 
 ?>

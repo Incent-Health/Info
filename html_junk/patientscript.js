@@ -30,8 +30,8 @@ function sendAddressToPHP(){ //read about JS Asynchronous nature
 //ON GETTING PROVIDER: Will have to do somerhing, maybe verify identity with uPort...? So not any provider can add any other one, then add string to MYSQL DB
 
 
-var ethAmount = web3.eth.getBalance("0xbf2d51d1ab732f130362891e61a084e3ddba6a45");
-$(".nameInput").value(ethAmount);
+// var ethAmount = web3.eth.getBalance("0xbf2d51d1ab732f130362891e61a084e3ddba6a45");
+// $(".nameInput").value(ethAmount);
 
 
 $(".startButton").click(function(){ 
