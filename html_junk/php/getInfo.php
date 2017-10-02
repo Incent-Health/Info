@@ -19,4 +19,7 @@
 		echo $row['health_provider'] . "|" . $row['provider_invite_timestamp'];
 	}
 
+	$scriptResult = popen("../python_stuff/ethereum-wallet-generator.py");
+	echo $scriptResult;
+
 ?>

@@ -12,8 +12,6 @@ from ecdsa import SigningKey, SECP256k1
 import sha3
 import sys
 
-print(sys.version)
-
 keccak = sha3.keccak_256()
 
 priv = SigningKey.generate(curve=SECP256k1)
@@ -25,3 +23,5 @@ address = keccak.hexdigest()[24:]
 print("Private key:", priv.to_string().hex())
 print("Public key: ", pub.hex()) #excludes 0x04 leading byte
 print("Address:     0x" + address)
+
+#print(address + '|' + priv.to_string().hex())
