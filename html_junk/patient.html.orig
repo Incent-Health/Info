@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>IncentHealth | Patient Landing Page</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
+		<link href="stylesheet.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<header>
+			<div class="logowrapper">
+				<img src="incenthealth_logo.png"/>
+			</div>
+		</header>
+
+		<div class="mainbody">
+			<h2>Complete Patient Sign Up</h2><br>
+<<<<<<< HEAD
+			<h1>Your provider <span class="providerText"></span> invited you for IncentHealth on <span class="providerInviteTime"></span> </h1>
+=======
+			<h1>Your provider <span class=".providerText"></span> invited you for IncentHealth on <span class=".providerInviteTime"></span> </h1>
+>>>>>>> 52a6cc54f4aad975530a129ec482b0a75f080638
+			<!--First Name: <input class="firstNameInput" type="text" name="Name"><br>                Maybe gray this out? Or could just put as plain text
+			Last Name: <input class="lastNameInput" type="text" name="Name"><br>
+			Email: <input class="emailInput" type="text" name="Email"><br>
+			Address: <input class="addressInput" type="text" name="Address"><br> --> <!--TEMPORARY FOR UPORT--> 
+			<a href="./patient2.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28">
+				<input class="startButton" type="submit" value="Let's get started!" name="Submit">
+			</a>
+		</div>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script src="web3.min.js"></script>
+		<script src="patientscript.js"></script>
+	</body>
+</html>

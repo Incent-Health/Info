@@ -16,22 +16,35 @@
 
 		<div class="mainbody">
 			<h2>Choose Incentive:</h2><br>
+<<<<<<< HEAD
 
 <!-- 			<a href="./patient3.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28">
 				<input class="submitButton" type="submit" value="Submit" name="Submit">
 			</a> -->
-			<form action="./patient3.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28" onsubmit="location.href = this.action + '&incentivetype=' +this.incentivetype.value; return false;"/> 
+			<form action="./patient3.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28"> 
 				<select name="incentivetype" class="incentiveSelect">
 					<option value="Classic">Classic</option> <!-- Individual Rewards -->
 					<option value="Group">Group</option> <!-- Collaborative Rewards -->
 					<option value="Deposit">Deposit</option> <!-- Individual Deposit -->
 					<option value="Group Deposit">Group Deposit</option> <!--Competitive Deposits-->
 				</select><br>
-				<input class="submitButton" type="submit" value="Submit"/>
-			</form>		
+			</form>
+			<input class="submitButton" type="submit" value="Submit" name="Submit">
 		</div>
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 		<script src="web3.min.js"></script>
 		<script src="patientscript2.js"></script>
+=======
+			<select>
+				<option value="Classic">Classic</option>
+			</select><br>
+			<a href="./patient3.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28">
+				<input class="startButton" type="submit" value="Submit" name="Submit">
+			</a>
+		</div>
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script src="web3.min.js"></script>
+		<script src="patientscript.js"></script>
+>>>>>>> 52a6cc54f4aad975530a129ec482b0a75f080638
 	</body>
 </html>
