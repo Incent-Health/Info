@@ -4,10 +4,11 @@ import time
 import urllib
 import responses
 from dbhelper import DBHelper
+from credentials import *
 db = DBHelper()
 
-TOKEN = "426053943:AAGn9BG9ax2EhdeswqgzpbJWJIV_Ftp95a0"
-URL = "https://api.telegram.org/bot{}/".format(TOKEN)
+TOKEN = CRED_TOKEN
+URL = CRED_URL.format(TOKEN)
 
 
 def get_url(url):
