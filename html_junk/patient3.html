@@ -17,9 +17,9 @@
 		<div class="mainbody">
 			<h2>Congratulations, we're ready to get you started! Click "Confirm" to complete your submission.</h2><br>
 			<span class="AddressInput"></span>
-			<a href="./patient2.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28">
-				<input class="submitButton" type="submit" value="Submit" name="Submit">
-			</a>
+			<form action="./patient3.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28" onsubmit="location.href = this.action + '&incentivetype=' +this.incentivetype.value; return false;"/> 
+				<input class="submitButton" type="submit" value="Confirm"/>
+			</form>		
 		</div>
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 		<script src="web3.min.js"></script>
