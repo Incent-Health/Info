@@ -1,11 +1,12 @@
 var incentiveselect;
 
-	incentiveselect = $("incentiveSelect").val();
-	console.log("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
-	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
+	// incentiveselect = $(".incentiveSelect").val();
+	// console.log("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
+	// sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
 
 $(".submitButton").click(function(){
-	incentiveselect = $("incentiveSelect").val();
+	incentiveselect = $(".incentiveSelect").val();
+	console.log("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
 	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
 });
 
