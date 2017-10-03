@@ -15,6 +15,7 @@ function getInfoPHP(patientAddress){ //read about JS Asynchronous nature
 		// console.log(providertimestamp);
 		// $(".providerText").text(healthprovider);
 		// $(".providerInviteTime").text(providertimestamp);
+		console.log(data);
 		data = data.split("|");
 		$(".AddressInput").text(data);
 	});
