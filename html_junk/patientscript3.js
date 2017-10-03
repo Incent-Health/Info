@@ -1,3 +1,6 @@
+$("header div, .mainbody *").hide();
+$("header div, .mainbody *").fadeIn(900);
+
 var patientAddress = getUrlParameter('address');
 var data = "address=" + patientAddress;
 var healthprovider, providertimestamp;

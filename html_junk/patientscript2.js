@@ -1,3 +1,6 @@
+$("header div, .mainbody *").hide();
+$("header div, .mainbody *").fadeIn(900);
+
 var incentiveselect;
 
 	// incentiveselect = $(".incentiveSelect").val();
