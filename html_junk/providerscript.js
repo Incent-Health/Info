@@ -20,17 +20,25 @@ const uportConnect = function () {
     	notifications: true // We want this if we want to recieve credentials
     })
     .then((credentials) => {
+    	//Parse, set, and update obtained credentials
     	var name = credentials.name;
     	var pos = name.indexOf(" ");
-    	var first_name = name.substring(0, pos);
-    	var last_name = name.substring(pos+1);
+    	if(pos != -1){
+    		var first_name = name.substring(0, pos);
+    		var last_name = name.substring(pos+1);
+    	} else {
+    		var first_name = name;
+    	}
     	var email = credentials.email;
     	var address = credentials.address;
+    	console.log(first_name + " " + last_name + " " + email + " " + address)
     	updateFields(first_name, last_name, email, address);
     })
 }
 
-
+$(".identifyButton").click(function(){
+	uportConnect();
+});
 
 $(".submitButton").click(function(){ 
 
@@ -45,10 +53,11 @@ $(".submitButton").click(function(){
 });
 
 function updateFields(firstn, lastn, email, address){
-	$(".firstNameInput").text(firstn);
-	$(".lastNameInput").text(lastn);
-	$(".emailInput").text(email);
-	$(".addressInput").text(address);
+	$(".firstNameInput").val(firstn);
+	$(".lastNameInput").val(lastn);
+	$(".emailInput").val(email);
+	$(".addressInput").val(address);
+	console.log("Updated fields!!!");
 }
 
 
