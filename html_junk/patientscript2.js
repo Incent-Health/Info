@@ -2,15 +2,12 @@
 // $("header div, .mainbody *").fadeIn(900);
 
 var incentiveselect;
-
-	// incentiveselect = $(".incentiveSelect").val();
-	// console.log("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
-	// sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
+var patientAddress = getUrlParameter('address');
 
 $(".submitButton").click(function(){
 	incentiveselect = $(".incentiveSelect").val();
-	console.log("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
-	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + getUrlParameter('address'));
+	console.log("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
 });
 
 function sendIncentiveSelectToPHP(dataInput){ //read about JS Asynchronous nature

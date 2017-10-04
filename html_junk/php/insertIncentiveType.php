@@ -14,7 +14,7 @@
 	//Connect to server with mysqli and select database
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
-	$result = $mysqli->query("UPDATE patientData SET incentive_type='" . $incentivetype . "' WHERE uport_address='" . $address . "'");
+	$result = $mysqli->query("UPDATE patientData SET incentive_type='" . $incentivetype . "'WHERE uport_address='" . $address . "'");
 	echo "reached end of PHP";
 
 ?>

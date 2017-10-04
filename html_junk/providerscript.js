@@ -12,7 +12,7 @@ const connect = new Connect("IncentHealth - App", {
     	signer: SimpleSigner("c7a3be5fbed3d61c3a29edc1c3f34040804d67a5d1eef9bbbf4e9c8702b3f358")
     })
 
-const uportConnect = function () {
+const uportConnect = function() {
 
     // Request credentials to login
     connect.requestCredentials({

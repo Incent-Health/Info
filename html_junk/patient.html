@@ -22,7 +22,12 @@
 			Last Name: <input class="lastNameInput" type="text" name="Name"><br>
 			Email: <input class="emailInput" type="text" name="Email"><br>
 			Address: <input class="addressInput" type="text" name="Address"><br> --> <!--TEMPORARY FOR UPORT--> 
-			<form action="./patient2.html?address=0x9b76124f6c8e13f1093a69647c5d34bebb5afc28"/> 
+			<form action="./patient2.html" onsubmit="location.href = this.action + '?address=' + patientAddress; return false;"/> 
+			<!--
+
+				===============================PLEASE PUT ONSUBMIT CODE INTO JQUERY FOR CONSISTENCY THANKS==========================================
+
+			-->
 				<input class="startButton" type="submit" value="Let's get started!"/>
 			</form>		
 
