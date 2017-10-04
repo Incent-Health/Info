@@ -1,8 +1,36 @@
-// var name = $(".nameInput").attr("value");
-// var email = $(".emailInput").attr("value");
-// var address = $(".addressInput").attr("value");
 
 var firstname, lastname, email, address;
+
+// Setup
+const SimpleSigner = window.uportconnect.SimpleSigner;
+const Connect = window.uportconnect.Connect;
+const appName = "IncentHealth - App";
+//const connect = new Connect(appName, {network: 'rinkeby'});
+const connect = new Connect("IncentHealth - App", {
+	clientId: "2og7ypfrpDj8Un8FTzPpwUSCat7e3Js3LU5",
+    	network: "rinkeby",
+    	signer: SimpleSigner("c7a3be5fbed3d61c3a29edc1c3f34040804d67a5d1eef9bbbf4e9c8702b3f358")
+    })
+
+const uportConnect = function () {
+
+    // Request credentials to login
+    connect.requestCredentials({
+    	requested: ['name', 'email', 'phone', 'country'],
+    	notifications: true // We want this if we want to recieve credentials
+    })
+    .then((credentials) => {
+    	var name = credentials.name;
+    	var pos = name.indexOf(" ");
+    	var first_name = name.substring(0, pos);
+    	var last_name = name.substring(pos+1);
+    	var email = credentials.email;
+    	var address = credentials.address;
+    	
+    })
+}
+
+
 
 $(".submitButton").click(function(){ 
 
@@ -16,6 +44,13 @@ $(".submitButton").click(function(){
 
 });
 
+function updateFields(firstn, lastn, email, address){
+	$(".firstNameInput").text(firstn);
+	$(".lastNameInput").text(lastn);
+	$(".emailInput").text(email);
+	$(".addressInput").text(address);
+
+}
 
 
 function sendPatientDatatoMySQL(){
@@ -28,16 +63,3 @@ function sendPatientDatatoMySQL(){
     console.log("SENT");
 
 }
-
-
-//send to MySQL DB
-
-//gmail API
-
-
-//IncentHealth
-//incenthealth1@gmail.com
-//incenthealth404
-
-
-//address 0x1702c51f3db95ddd417514adc9b93f62ff593d5b

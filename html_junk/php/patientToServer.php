@@ -50,7 +50,7 @@
 
 	    //Recipients
 	    $mail->setFrom('incenthealth1@gmail.com', 'IncentHealth');
-	    $mail->addAddress('incenthealth1@gmail.com', 'Patient A');     // Add a recipient          RECIPIENT
+	    $mail->addAddress($email, $firstname . " " . $lastname);     // Add a recipient          RECIPIENT
 
 	    //Content
 	    $mail->isHTML(true);                                  // Set email format to HTML
