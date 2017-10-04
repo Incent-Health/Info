@@ -26,7 +26,7 @@ const uportConnect = function () {
     	var last_name = name.substring(pos+1);
     	var email = credentials.email;
     	var address = credentials.address;
-    	
+    	updateFields(first_name, last_name, email, address);
     })
 }
 
@@ -49,7 +49,6 @@ function updateFields(firstn, lastn, email, address){
 	$(".lastNameInput").text(lastn);
 	$(".emailInput").text(email);
 	$(".addressInput").text(address);
-
 }
 
 
