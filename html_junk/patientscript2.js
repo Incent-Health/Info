@@ -1,5 +1,5 @@
-$("header div, .mainbody *").hide();
-$("header div, .mainbody *").fadeIn(900);
+// $("header div, .mainbody *").hide();
+// $("header div, .mainbody *").fadeIn(900);
 
 var incentiveselect;
 

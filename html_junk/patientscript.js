@@ -7,8 +7,8 @@
 //   // If no injected web3 instance is detected, fallback to the TestRPC.
 // 	web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 // }
-$("header div, .mainbody *").hide();
-$("header div, .mainbody *").fadeIn(900);
+// $("header div, .mainbody *").hide();
+// $("header div, .mainbody *").fadeIn(900);
 var patientAddress = getUrlParameter('address');
 var data = "address=" + patientAddress;
 var healthprovider, providertimestamp;
