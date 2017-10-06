@@ -3,12 +3,16 @@ import requests
 import time
 import urllib
 import responses
-from dbhelper import DBHelper
-from credentials import *
+import os
+from os.path import getmtime
+import sys
+import credentials
+from dbhelper import DBHelper, Database
 db = DBHelper()
 
-TOKEN = CRED_TOKEN
-URL = CRED_URL.format(TOKEN)
+
+TOKEN = CRED_TOKEN    #Your API token credentials held in external file
+URL = CRED_TOKEN.format(TOKEN)    #Your API token credentials held in external file 
 
 
 def get_url(url):
@@ -68,21 +72,28 @@ def handle_updates(updates):
             send_message(message, chat)
         except KeyError:
             pass
-def response(updates, INDEX={}):
-    print INDEX
+def response(updates, USERDB, INDEX={}):
     for update in updates["result"]:
         try:
             text = update["message"]["text"]
             chat = update["message"]["chat"]["id"]
+            if not chat in USERDB.df.index:
+                USERDB.add_user(chat)
+                USERDB.save_database()
+            else:
+                pass
             if chat in INDEX:
                 index = INDEX[chat]
             else:
                 index = 1
-            print index, text
             X = responses.conversation(text, index)
-            print X
+            print 'user%s:%s' %(chat, text)
+            print 'robot_reponse', X
             INDEX[chat] = X[1]
             send_message(X[0], chat)
+            if X[2] != None:
+                USERDB.record_user(chat, X[2], X[3])
+                USERDB.save_database()
         except KeyError:
             pass
         return INDEX
@@ -94,13 +105,21 @@ def send_message(text, chat_id):
 
 def main():
     last_update_id = None
+    USERDB = Database(my_file = 'recorded_respond.csv')
     INDEX = {}
     while True:
         updates = get_updates(last_update_id)
         if len(updates["result"]) > 0:
             last_update_id = get_last_update_id(updates) + 1
-            INDEX = response(updates, INDEX)
+            INDEX = response(updates, USERDB, INDEX)
         time.sleep(1)
 
 if __name__ == '__main__':
     main()
+WATCHED_FILES = [responses.py, dbhelper.py, __file__]
+WATCHED_FILES_MTIMES = [(f, getmtime(f)) for f in WATCHED_FILES]
+while True:
+    for f, mtime in WATCHED_FILES_MTIMES:
+        if getmtime(f) != mtime:
+            print >>sys.stderr, '-------> restarting'
+            os.execv(__file__, ['python'] + sys.argv)
