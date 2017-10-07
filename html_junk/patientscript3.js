@@ -7,6 +7,13 @@ var healthprovider, providertimestamp;
 
 getInfoPHP(patientAddress);
 
+$(".submitForm").submit(function(e){
+	e.preventDefault();
+	var link = "./patient4.html";
+	location.href = link;
+
+});
+
 function getInfoPHP(patientAddress){ //read about JS Asynchronous nature
 	$.post("php/getInfo.php", data, function(data){ 
 		// console.log(data);

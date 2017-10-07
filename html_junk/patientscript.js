@@ -36,9 +36,12 @@ function sendAddressToPHP(){ //read about JS Asynchronous nature
 // $(".nameInput").value(ethAmount);
 
 
-$(".startButton").click(function(){ 
+$(".startForm").submit(function(e){  //
 	//$("header div, .mainbody *").fadeOut();
-	console.log("CLICKED: " + address);
+	e.preventDefault(); //submit()/onsubmit() runs before action attr is run, I think, so in order for this form to work the way we want it to, let's disable this
+	console.log("CLICKED: " + patientAddress);
+	var link = "./patient2.html";
+	location.href = link + '?address=' + patientAddress;
 });
 
 /*Borrowed from https://davidwalsh.name/query-string-javascript; Using over URLSearchParams to support all browsers!*/

@@ -55,8 +55,8 @@
 	    //Content
 	    $mail->isHTML(true);                                  // Set email format to HTML
 	    $mail->Subject = 'IncentMail';
-	    $mail->Body    = '<h1>Greetings Patient!</h1> <h3>Finish signing up with IncentHealth: <a href="http://sunquyman.xyz/incenthealth/html_junk/patient.html">click me friend</a></h3>';
-	    $mail->AltBody = 'Greetings Patient! Finish signing up with IncentHealth: http://www.sunquyman.xyz/incenthealth/html_junk/patient.html';
+	    $mail->Body    = '<h1>Greetings Patient!</h1> <h3>Finish signing up with IncentHealth: <a href="http://sunquyman.xyz/incenthealth/html_junk/patientlogin.html">click me friend</a></h3>';
+	    $mail->AltBody = 'Greetings Patient! Finish signing up with IncentHealth: http://www.sunquyman.xyz/incenthealth/html_junk/patientlogin.html';
 
 	    $mail->send();
 	    echo 'Message has been sent';

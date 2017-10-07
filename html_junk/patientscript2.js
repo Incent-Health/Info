@@ -4,11 +4,16 @@
 var incentiveselect;
 var patientAddress = getUrlParameter('address');
 
-$(".submitButton").click(function(){
+$(".submitForm").submit(function(e){
+	e.preventDefault();
 	incentiveselect = $(".incentiveSelect").val();
 	console.log("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
 	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+	var link = "./patient3.html";
+	location.href = link + '?address=' + patientAddress + '&incentivetype=' + incentiveselect;
 });
+
+
 
 function sendIncentiveSelectToPHP(dataInput){ //read about JS Asynchronous nature
 	$.post("php/insertIncentiveType.php", dataInput, function(data){ 
