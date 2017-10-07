@@ -7,7 +7,7 @@ var healthprovider, providertimestamp;
 
 getInfoPHP(patientAddress);
 
-$(".submitForm").submit(function(e){
+$(".confirmForm").submit(function(e){
 	e.preventDefault();
 	var link = "./patient4.html";
 	location.href = link;
