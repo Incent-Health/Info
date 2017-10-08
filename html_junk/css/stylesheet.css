@@ -2,7 +2,7 @@ body {
 
 	margin: 0;
 	font-family: 'Open Sans';
-	background-color: #353839;
+	background-color: #0bc0aa;
 
 }
 
@@ -12,19 +12,20 @@ header {
 	margin-bottom: 60px;
 	margin-top: 0px;
 	text-align: center;
-	background-color: black;
-	height: 400px;
+	background-color: #333333;
+	height: 82px;
+	padding: 0px 20px;
 
 }
 
-.logowrapper {
+
+/*.logowrapper {
 
 	height:200px;
 	width:200px;
 	display:inline-block;
 	margin: 50px 0;
 	padding: 50px;
-	/*border: 2px solid black;*/
 	background-color: white;
 	border-radius: 50%;
 
@@ -35,12 +36,71 @@ header {
 	width: 200px;
 	margin-top: 20px;
 
+}*/
+
+.logowrapper {
+	display: block;
+	float: left;
+	padding: 5px 0px;
 }
+
+.logowrapper img {
+
+	height: 72px;
+
+}
+
+.headerspace1 {
+
+	display: block;
+	height: 82px;
+	width: 50px;
+	float: left;
+
+}
+
+header nav {
+
+}
+
+header nav ul {
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li {
+	float: left;
+}
+
+header nav ul li a {
+	display: block;
+	color: #FFFAFA;
+	text-align: center;
+	padding: 30px 22px;
+	text-decoration: none;
+
+}
+
+header nav ul li a:hover {
+	background-color: #111111;
+}
+
+
+/*
+
+
+============================= MAIN BODY ============================
+
+
+*/
+
 
 .mainbody {
 
 	text-align: center;
-	color: white;
+	color: #FFFAFA;
 
 }
 
@@ -50,7 +110,21 @@ header {
 	margin-bottom: 10px;
 }
 
+.mainbody .siimple-btn {
+	background-color: #7c5fc4;
+	color: #FFFAFA;
+
+}
+
+.mainbody .siimple-label {
+	color: #FFFAFA;
+}
+
 .mainbody input[name=Submit] {
 
 	margin: 90px;
 }
+
+
+
+/*#0bc0aa -green- and #7c5fc4 -purple-*/

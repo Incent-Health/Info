@@ -3,26 +3,38 @@
 	<head>
 		<title>IncentHealth | Provider Landing Page</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/siimple/2.0.1/siimple.min.css">
 		<link href="css/stylesheet.css" rel="stylesheet">
 	</head>
 
 	<body>
 
 		<header>
-			<div class="logowrapper">
-				<img src="img/incenthealth_logo.png"/>
-			</div>
+			<nav>
+				<div class="logowrapper"><a href="./index.html"><img src="img/incenthealth_logo.png"/></a></div>
+				<div class="headerspace1"></div>
+				<ul>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./patientlogin.html">Patients</a></li>
+					<li><a href="./provider.html">Providers</a></li>
+					<li><a href="./aboutus.html">About Us</a></li>
+					<li><a href="./contactus.html">Contact</a></li>
+				</ul>
+			</nav>
 		</header>
 
 		<div class="mainbody">
 			<h2>Invite Patient to IncentHealth</h2><br>
-			First Name: <input class="firstNameInput" type="text" name="FirstName"><br>
-			Last Name: <input class="lastNameInput" type="text" name="LastName"><br>
-			Email: <input class="emailInput" type="text" name="Email" value="incenthealth1@gmail.com"><br>
+
+			<div class="inputwrapper"><label type="text" class="siimple-label">First Name: </label><input class="firstNameInput siimple-input" type="text" name="FirstName"><br></div>
+			<div class="inputwrapper"><label type="text" class="siimple-label">Last Name: </label><input class="lastNameInput siimple-input" type="text" name="LastName"><br></div>
+			<div class="inputwrapper"><label type="text" class="siimple-label">Email: </label><input class="emailInput siimple-input" type="text" name="Email" value="incenthealth1@gmail.com"><br></div>
 			<br>
-			Address: <input class="addressInput" type="text" name="Address" disabled="disabled"><br> <!--TEMPORARY FOR UPORT--> 
-			<input class="identifyButton" type="submit" value="Identify Patient" name="Submit"/><br>
-			<input class="submitButton" type="submit" value="Send Invitation" name="Submit"/>
+			<div class="inputwrapper"><label type="text" class="siimple-label">uPort ID: </label><input class="addressInput siimple-input" type="text" name="Address" disabled="disabled"><br></div>
+
+
+			<input class="identifyButton siimple-btn" type="submit" value="Identify Patient" name="Submit"/><br>
+			<input class="submitButton siimple-btn" type="submit" value="Send Invitation" name="Submit"/>
 		</div>
 		<script type="text/javascript" src="uport_js/web3.js"></script>
     	<script type="text/javascript" src="uport_js/uport-connect.js"></script>	
