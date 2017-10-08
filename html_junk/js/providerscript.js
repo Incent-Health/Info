@@ -6,14 +6,20 @@ const SimpleSigner = window.uportconnect.SimpleSigner;
 const Connect = window.uportconnect.Connect;
 const appName = "IncentHealth - App";
 //const connect = new Connect(appName, {network: 'rinkeby'});
-const connect = new Connect("IncentHealth - App", {
-	clientId: "2og7ypfrpDj8Un8FTzPpwUSCat7e3Js3LU5",
-    	network: "rinkeby",
-    	signer: SimpleSigner("c7a3be5fbed3d61c3a29edc1c3f34040804d67a5d1eef9bbbf4e9c8702b3f358")
-    })
+// const connect = new Connect("IncentHealth - App", {
+// 	clientId: "2og7ypfrpDj8Un8FTzPpwUSCat7e3Js3LU5",
+//     	network: "rinkeby",
+//     	signer: SimpleSigner("c7a3be5fbed3d61c3a29edc1c3f34040804d67a5d1eef9bbbf4e9c8702b3f358")
+//     })
+var connect;
 
 const uportConnect = function() {
 
+    connect =  new Connect("IncentHealth - App", {
+    clientId: "2og7ypfrpDj8Un8FTzPpwUSCat7e3Js3LU5",
+        network: "rinkeby",
+        signer: SimpleSigner("c7a3be5fbed3d61c3a29edc1c3f34040804d67a5d1eef9bbbf4e9c8702b3f358")
+    })
     // Request credentials to login
     connect.requestCredentials({
     	requested: ['name', 'email', 'phone', 'country'],
@@ -33,7 +39,10 @@ const uportConnect = function() {
     	var address = credentials.address;
     	console.log(first_name + " " + last_name + " " + email + " " + address)
     	updateFields(first_name, last_name, email, address);
+        checkButtonEnabled();
     })
+
+
 }
 
 $(".identifyButton").click(function(){
@@ -41,6 +50,10 @@ $(".identifyButton").click(function(){
 });
 
 $(".submitButton").click(function(){ 
+
+    if($(".submitButton").hasClass("siimple-btn--disabled")){
+        return;
+    }
 
 	firstname = $(".firstNameInput").val();
 	lastname = $(".lastNameInput").val();
@@ -60,6 +73,13 @@ function updateFields(firstn, lastn, email, address){
 	console.log("Updated fields!!!");
 }
 
+function checkButtonEnabled(){
+    addressVal = $(".addressInput").val();
+    if ((addressVal != "" || addressVal != undefined) && $(".submitButton").hasClass("siimple-btn--disabled")){
+        $(".submitButton").removeClass("siimple-btn--disabled");
+    }
+
+}
 
 function sendPatientDatatoMySQL(){
 

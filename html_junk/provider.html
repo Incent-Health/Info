@@ -8,7 +8,7 @@
 	</head>
 
 	<body>
-
+		<div id="pagewrapper">
 		<header>
 			<nav>
 				<div class="logowrapper"><a href="./index.html"><img src="img/incenthealth_logo.png"/></a></div>
@@ -24,18 +24,79 @@
 		</header>
 
 		<div class="mainbody">
-			<h2>Invite Patient to IncentHealth</h2><br>
+			<h2>Invite Patient to IncentHealth</h2>
 
-			<div class="inputwrapper"><label type="text" class="siimple-label">First Name: </label><input class="firstNameInput siimple-input" type="text" name="FirstName"><br></div>
+<!--  			<div class="inputwrapper"><label type="text" class="siimple-label">First Name: </label><input class="firstNameInput siimple-input" type="text" name="FirstName"><br></div>
 			<div class="inputwrapper"><label type="text" class="siimple-label">Last Name: </label><input class="lastNameInput siimple-input" type="text" name="LastName"><br></div>
 			<div class="inputwrapper"><label type="text" class="siimple-label">Email: </label><input class="emailInput siimple-input" type="text" name="Email" value="incenthealth1@gmail.com"><br></div>
 			<br>
 			<div class="inputwrapper"><label type="text" class="siimple-label">uPort ID: </label><input class="addressInput siimple-input" type="text" name="Address" disabled="disabled"><br></div>
 
+			<br><br> -->
+
+			<div class="siimple-grid" style="width:400px">
+				<div class="siimple-grid-row"> 
+					<div class="siimple-grid-col siimple-grid-col--4">
+						<div class="inputwrappwer">
+							<label type="text" class="siimple-label">First Name: </label>
+						</div>
+					</div>
+					<div class="siimple-grid-col siimple-grid-col--8">
+						<div class="inputwrappewr">
+							<input class="firstNameInput siimple-input" type="text" name="FirstName">
+						</div>
+					</div>
+				</div>
+				<div class="siimple-grid-row">
+					<div class="siimple-grid-col siimple-grid-col--4">
+						<div class="inputwrapwper">
+							<label type="text" class="siimple-label">Last Name: </label>
+						</div>
+					</div>
+					<div class="siimple-grid-col siimple-grid-col--8">
+						<div class="inputwrappwer">
+							<input class="lastNameInput siimple-input" type="text" name="LastName">
+						</div>
+					</div>
+				</div>
+				<div class="siimple-grid-row">
+					<div class="siimple-grid-col siimple-grid-col--4">
+						<div class="inputwrwapper">
+							<label type="text" class="siimple-label">Email: </label>
+						</div>
+					</div>
+					<div class="siimple-grid-col siimple-grid-col--8">
+						<div class="inputwrawpper">
+							<input class="emailInput siimple-input" type="text" name="Email" value="incenthealth1@gmail.com">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inputwrapper"><label type="text" class="siimple-label">uPort ID: </label><input class="addressInput siimple-input" type="text" name="Address" disabled="disabled"><br></div>
 
 			<input class="identifyButton siimple-btn" type="submit" value="Identify Patient" name="Submit"/><br>
-			<input class="submitButton siimple-btn" type="submit" value="Send Invitation" name="Submit"/>
+			<input class="submitButton siimple-btn siimple-btn--disabled" type="submit" value="Send Invitation" name="Submit"/>
+  			
+		
+
 		</div>
+		</div>
+		<footer>
+
+			<div class="siimple-grid">
+				<div class="siimple-grid-row"> 
+					<div class="siimple-grid-col siimple-grid-col--4">
+						<span id="footerlogoname">IncentHealth 2017. All rights reserved.</span>
+						<a href="https://icons8.com">Icon pack by Icons8</a>
+					</div>
+					<div class="siimple-grid-col siimple-grid-col--8">
+
+					</div>
+				</div>
+			</div>
+
+			
+		</footer>
 		<script type="text/javascript" src="uport_js/web3.js"></script>
     	<script type="text/javascript" src="uport_js/uport-connect.js"></script>	
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>

@@ -1,16 +1,23 @@
+html {
+	height: 100%;
+}
+
 body {
 
 	margin: 0;
+	height: 100%;
 	font-family: 'Open Sans';
 	background-color: #0bc0aa;
 
 }
 
+#pagewrapper {
+	min-height: 100%;
+	/*position: relative;*/
+}
+
 header {
 
-	margin: 80px auto;
-	margin-bottom: 60px;
-	margin-top: 0px;
 	text-align: center;
 	background-color: #333333;
 	height: 82px;
@@ -41,13 +48,20 @@ header {
 .logowrapper {
 	display: block;
 	float: left;
-	padding: 5px 0px;
 }
 
-.logowrapper img {
+.logowrapper a {
+	display: block;
+	height: 72px; /*DON'T DO THIS HARD-CODING TERRIBLE TERRIBLE TERRIBLE I CAN'T CSS LOLOLOLOL*/
+	padding: 5px 5px;
+}
 
+.logowrapper a:hover {
+	background-color: #111111;
+}
+
+.logowrapper a img {
 	height: 72px;
-
 }
 
 .headerspace1 {
@@ -80,7 +94,6 @@ header nav ul li a {
 	text-align: center;
 	padding: 30px 22px;
 	text-decoration: none;
-
 }
 
 header nav ul li a:hover {
@@ -101,18 +114,23 @@ header nav ul li a:hover {
 
 	text-align: center;
 	color: #FFFAFA;
-
+	margin: 100px 100px;
 }
 
 .mainbody h2 {
 
 	font-size: 34px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.mainbody .inputwrapper {
+	margin: 10px 0px;
 }
 
 .mainbody .siimple-btn {
 	background-color: #7c5fc4;
 	color: #FFFAFA;
+	margin: 10px 0px;
 
 }
 
@@ -120,11 +138,21 @@ header nav ul li a:hover {
 	color: #FFFAFA;
 }
 
-.mainbody input[name=Submit] {
+/*
 
-	margin: 90px;
+
+============================= FOOTER ============================
+
+
+*/
+
+
+footer {
+	height:300px;	
+	width: 100%;
+	background-color: #7c5fc4;
+	padding: 30px 0px;
 }
-
 
 
 /*#0bc0aa -green- and #7c5fc4 -purple-*/
