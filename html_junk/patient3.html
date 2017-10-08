@@ -3,24 +3,54 @@
 	<head>
 		<title>IncentHealth | Patient Landing Page</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/siimple/2.0.1/siimple.min.css">
 		<link href="css/stylesheet.css" rel="stylesheet">
 	</head>
 
 	<body>
-
+		<div id="pagewrapper">
 		<header>
-			<div class="logowrapper">
-				<img src="img/incenthealth_logo.png"/>
-			</div>
+			<nav>
+				<div class="logowrapper"><a href="./index.html"><img src="img/incenthealth_logo.png"/></a></div>
+				<div class="headerspace1"></div>
+				<ul>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./patientlogin.html">Patients</a></li>
+					<li><a href="./provider.html">Providers</a></li>
+					<li><a href="./aboutus.html">About Us</a></li>
+					<li><a href="./contactus.html">Contact</a></li>
+				</ul>
+			</nav>
 		</header>
 
 		<div class="mainbody">
 			<h2>Congratulations, we're ready to get you started! Click "Confirm" to complete your submission.</h2><br>
 			<span class="AddressInput"></span>
 			<form class="confirmForm"> 
-				<input class="submitButton" type="submit" value="Confirm"/>
+				<input class="submitButton siimple-btn" type="submit" value="Confirm"/>
 			</form>		
 		</div>
+		</div>
+		<footer>
+			<div class="siimple-grid">
+				<div class="siimple-grid-row"> 
+					<div class="siimple-grid-col siimple-grid-col--4">
+						<span id="footerlogoname">IncentHealth 2017. All rights reserved.</span>
+						<br><a href="https://icons8.com">Icon pack by Icons8</a>
+					</div>
+					<div class="footerright siimple-grid-col siimple-grid-col--8">
+						<div class="footericons">
+							<a href="https://github.com/Incent-Health"><img src="img/icons8-GitHub-64.png"/></a>
+							<a href="https://devpost.com/software/medpaytoken-healthcare-financial-inclusion"><img src="img/icons8-DevPost-Filled-50.png"/></a>
+							<a href=""><img src="img/icons8-Facebook-48.png"/></a>
+							<a href="https://twitter.com/IncentHealth"><img src="img/icons8-Twitter-48.png"/></a>
+							<a href=""><img src="img/icons8-Instagram-Old-48.png"/></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 		<script src="js/web3.min.js"></script>
 		<script src="js/patientscript3.js"></script>
