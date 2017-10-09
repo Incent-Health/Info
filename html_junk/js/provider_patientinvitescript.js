@@ -1,5 +1,6 @@
 
 var firstname, lastname, email, address;
+var providerAddress = getUrlParameter("address");
 
 // Setup
 const SimpleSigner = window.uportconnect.SimpleSigner;
@@ -63,6 +64,7 @@ $(".submitButton").click(function(){
 	sendPatientDatatoMySQL();
 	console.log("INSERT INTO patientData (first_name,last_name,email,uport_address) VALUES('" + firstname + "', '" + lastname + "','" + email + "','" + address + "');");
 
+
 });
 
 function updateFields(firstn, lastn, email, address){
@@ -86,8 +88,21 @@ function sendPatientDatatoMySQL(){
     var data = "firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&address=" + address;
     //xmlhttp.open("POST","patientToServer.php",true);
     console.log("PHP JS MARKER");
-    $.post('php/patientToServer.php', data, function(data){console.log(data + "\n");}); //NEED WAY TO ADD CONDITIONALS, I.E. CHECK FOR DATABASE INSERT ERRORS AND REPORT APPROPRIATE RESULT TO USER
-    //xmlhttp.send(data);
-    console.log("SENT");
+    $.post('php/patientToServer.php', data, function(data){
+        console.log(data + "\n");
+        var data = data.split("|");
+        if(data[0] === "true"){
+            location.href = link + "?address=" + providerAddress;
+        } else {
+            alert("ERROR: User insert failed. Is user already registered with IncentHealth? Please try to delete any existing entries before trying again.");
+        }
+    }); 
 
 }
+
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};

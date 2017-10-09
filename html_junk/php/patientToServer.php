@@ -23,12 +23,13 @@
 	$password="incenthealth404";
 	$serverURL="localhost"; //replace this with localhost for deployment
 	$database="luisjgkr_IncentHealth";
-	echo $firstname;
+
 	//Connect to server with mysqli and select database
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
 	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,uport_address) VALUES('" . $firstname . "', '" . $lastname . "','" . $email . "','" . $address . "')");
-	echo $firstname + $result;
+	echo $result->execute() + "|"; //See if insert was successful or not
+
 
 
 	/*
