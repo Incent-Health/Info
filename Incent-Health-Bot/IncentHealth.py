@@ -6,13 +6,13 @@ import responses
 import os
 from os.path import getmtime
 import sys
-import credentials
 from dbhelper import DBHelper, Database
 db = DBHelper()
 
 
-TOKEN = CRED_TOKEN    #Your API token credentials held in external file
-URL = CRED_TOKEN.format(TOKEN)    #Your API token credentials held in external file 
+#API token credentials are grabbed from your Social Media/Messenging Service Developer profile. Credentials below are illustrative only. 
+TOKEN = "42605394XxXXXGn9BG9ax2EhdeswqgzpbxxxXXp95a0"
+URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
 def get_url(url):

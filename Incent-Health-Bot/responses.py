@@ -1,31 +1,34 @@
 import nltk
 import random
 
+	
 SurveyStarter = ' Are you ready for some survey questions? (Enter Yes or No). If you would like to talk to your careteam in person, enter \'Talk\', someone  will call as soon as possible.'
 
 Question1 = '''On a scale from 1 to 10, how would you grade your craving for a cigarette today? (Enter a number, e.g. 2)'''
-Question2 = '''May I ask what do you do to keep the craving minimal? (e.g. nicotine patch, excercise, hanging out with friends, ect.) '''
+Question2 = ''' May I ask what do you do to keep the craving minimal? (e.g. nicotine patch, excercise, hanging out with friends, ect.) '''
 Question3 = """ Did you smoke today? (Enter Yes or No.) Remember that your care team is not here to judge you, they are here to help.  A \'Yes\' answer to this question will NOT harm you in any shape or form """
 Question4 = 'Would you classify is as 1. peer pressure, 2. stress from work and life in general, 3. withdrawn symptoms, 4. others. Please select one or more options e.g 1 or 1, 2'
 
 smokefreeurl = 'https://smokefree.gov/#618_intro'
 
 yes_responses = ['maybe','yes', 'y', '1', 'ok', 'alright', 'sure']
-no_responses = ['no','n', '0', 'not']
+no_responses = ['no','n', '0', 'not', 'never', 'nvm']
 
-REPEAT_INQUIRIES = ['Sorry? ', 'Friend, I would appreciate real input. ', 'You\'re funny, but I would like real input. ' ]
+REPEAT_INQUIRIES = ['Sorry? ', 'Friend, I would appreciate real input. ', 'You\'re funny, but I would like real input. ']
 
 def start(sentence):
-    if sentence == '\start':
-        return ("I'm IncentHealth Bot! Glad to meet you! Are you ready for some survey questions?", 2, None, None)
+    #index = 0
+    if sentence[0] == '\start':
+        return ("I'm IncentHealth Bot! Glad to meet you!" + SurveyStarter, 2, None, None)
     else:
         return ('', 1, None, None)
 
 def check_for_greeting(sentence):
+    #index = 1
     """If any of the words in the user's input was a greeting, return a greeting response"""
     GREETING_KEYWORDS = ("hello", "hi", "greetings", "sup", "what's up", "hey")
     GREETING_RESPONSES = ["Hello!", "Hi!", "Greetings!", "Hello! Glad to hear from you!", "Hey!" ]
-    for word in sentence.split():
+    for word in sentence:
         if word.lower() in GREETING_KEYWORDS:
             greetings = random.choice(GREETING_RESPONSES)
             return (greetings + SurveyStarter, 2, None, None)
@@ -34,10 +37,9 @@ def check_for_greeting(sentence):
 
 
 def argree_to_survey(sentence):
-    sentence = [word.lower() for word in sentence.split()]
-
+    #index = 2
     if 'talk' in sentence:
-        return('Alright, I will remind the careteam to call you.', 'responsetogradtitude', None, None)
+        return('Alright, I will remind the careteam to call you.', 1,  None, None)
     elif any(x in sentence for x in yes_responses):
         return (Question1,  3, None, None)
         #return ('On a scale from 1 to 10, how would you grade your craving for a cigarette today? (Enter a number, i.e. 2)', 3)
@@ -45,11 +47,11 @@ def argree_to_survey(sentence):
         return ('Alright, when you are ready, text me \'Hi\' and we can start again.', 1, None, None)
     else:
         repeat = random.choice(REPEAT_INQUIRIES)
-        return (repeat +  Question1, 2, None, None)
+        return (repeat +  SurveyStarter, 2, None, None)
 
 
 def assess_craving(sentence):
-    sentence = [word.lower() for word in sentence.split()]
+    #index =3
     try:
         integers = [int(x) for x in sentence]
     except:
@@ -70,7 +72,7 @@ def assess_craving(sentence):
         return (repeat + 'Please enter a number from 1 to 10', 3, None, None)
 
 def positive_activities(sentence):
-    sentence = [word.lower() for word in sentence.split()]
+    #index = 4
     nicotine_substitution = ['nicotine', 'patch']
     socializing = ['friend', 'friends', 'buddy', 'buddies', 'family', 'companion', 'companions', 'classmate', 'workmate']
     excercise = ['excercise', 'yoga', 'meditation', 'weight', 'music', 'book', ]
@@ -97,7 +99,7 @@ def positive_activities(sentence):
     return ('Great!' + Question3, 5, positive_activities, [D[x] for x in positive_activities])
 
 def smoked(sentence):
-    sentence = [word.lower() for word in sentence.split()]
+    #index = 5
     if any(x in sentence for x in yes_responses):
         return ('Alright, let\'s walk through it together to see if you can do better tomorrow. Tell me more about the time when you decided to have a cigarette', 6, ['smoked'], [1])
     elif any(x in sentence for x in no_responses):
@@ -106,10 +108,11 @@ def smoked(sentence):
         repeat = random.choice(REPEAT_INQUIRIES)
         return ( repeat + 'Please enter Yes or No.', 5, None, None)
 def negative_activities_primer(sentence):
+    #index = 6
     return ('Sorry to hear that!' + Question4, 7, None, None)
 
 def negative_activities(sentence):
-    sentence = [word.lower() for word in sentence.split()]
+    #index = 7
     D={}
     negative_activities = ['peer_pressure', 'withdrawn_symptoms', 'stress', 'other_negative']
     for x in negative_activities:
@@ -130,7 +133,10 @@ def negative_activities(sentence):
 
 
 def conversation(sentence, index = 0):
-    if index == 0:
+    sentence = [word.lower() for word in sentence.split()]
+    if sentence[0] == '\delete':
+        return ('Ok, talk to you later!', 1, None, None)
+    elif index == 0:
         return  start(sentence)
     elif index == 1:
         return check_for_greeting(sentence)
@@ -147,6 +153,6 @@ def conversation(sentence, index = 0):
     elif index == 7:
         return negative_activities(sentence)
     else:
-        return ('Thanks for taking the time to talk to me!', 0, None, None)
+        return ('Thanks for taking the time to talk to me!', 1, None, None)
 
 
