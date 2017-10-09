@@ -8,20 +8,6 @@ const Connect = window.uportconnect.Connect;
 const appName = "IncentHealth - App";
 var connect;
 
-/*
-***********************PRECIOUS WEB3() CODE***********************
-*/
-//connect.getWeb3();
-// const web3 = connect.getWeb3();      
-
-// Setup the contract - allows you to set and read a status string
-// const contractAddress = "0xCD7C289E43C38EEaBD060558297913E0d7A3936F";
-// const abi = [{"constant":false,"inputs":[{"name":"patientAdd","type":"address"},{"name":"firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"email","type":"string"},{"name":"walletAddress","type":"address"},{"name":"incentiveType","type":"bytes32"},{"name":"payAmount","type":"int256"},{"name":"providerAddress","type":"address"}],"name":"addPatient","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"patientAdd","type":"address"}],"name":"getPatient","outputs":[{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"patientAdd","type":"address"},{"name":"amount","type":"uint256"}],"name":"rewardPatient","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"providerAddress","type":"address"},{"name":"name","type":"string"}],"name":"addProvider","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
-
-// const PatientContract = web3.eth.contract(abi); //get Contract Object
-// const ContractInstance = PatientContract.at("0xCD7C289E43C38EEaBD060558297913E0d7A3936F");
-// console.log("Instance of PatientContract loaded at: " + contractAddress);
-
 
 const uportConnect = function () {
 
@@ -47,13 +33,12 @@ function checkProviderAddress(address){
      if(isProviderAddressMySQL(address)){
             succesfulLogin();
         } else {
-            alert(":( ur not a provider");
+            alert("ERROR: Address not recognized as a provider.");
         }
 }
 
 function successfulLogin(){
-    alert("ur a provider :DDD");
-    //window.location.href = "./patient.html?address=" + address;
+    window.location.href = "./providerportal.html?address=" + address;
 }
 
 function isProviderAddressMySQL(address){
@@ -61,7 +46,7 @@ function isProviderAddressMySQL(address){
     var data = "address=" + address;
     $.post('php/isProviderAddress.php', data, function(data){
         console.log(data);
-        if("data" == "true"){
+        if(data == "true"){
             return true;
         } else {
             return false;

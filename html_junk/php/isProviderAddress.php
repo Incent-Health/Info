@@ -11,6 +11,7 @@
 	//Connect to server with mysqli and select database
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
+	//echo "SELECT id FROM providerData WHERE uport_address = \"" . $address . "\"";
 	$request = $mysqli->query("SELECT id FROM providerData WHERE uport_address = \"" . $address . "\"");
 
     if($results->num_rows !== 0){
