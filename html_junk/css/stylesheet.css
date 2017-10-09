@@ -209,6 +209,27 @@ header nav ul li a:hover {
 	font-weight: 600px;
 }
 
+
+.providerportal {
+	text-align:left;
+}
+
+.providerportal .providerportal-actions {
+
+	list-style-type: none;
+}
+
+.providerportal .providerportal-settings {
+
+	list-style-type: none;
+}
+
+.providerportal .providerportal-lastlogin {
+	float: right;
+	font-size: 12px;
+}
+
+
 /*
 
 
