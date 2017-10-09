@@ -35,7 +35,6 @@ a:hover {
 	color: lightgray;
 }
 
-
 /*.logowrapper {
 
 	height:200px;
@@ -127,14 +126,28 @@ header nav ul li a:hover {
 	margin: 100px 100px;
 }
 
+.mainbody h1 {
+	margin: 40px 0;
+}
+
 .mainbody h2 {
 
 	font-size: 34px;
 	margin-bottom: 30px;
 }
 
+.mainbody .hr {
+	margin: 0 auto;
+	width: 25%;
+	border-bottom: 1px solid #FFFAFA;
+}
+
 .mainbody .inputwrapper {
 	margin: 10px 0px;
+}
+
+.mainbody .mainiconwrapper img {
+	height: 140px;
 }
 
 .mainbody .siimple-btn {
@@ -152,6 +165,50 @@ header nav ul li a:hover {
 	background-color: #c3d7ef;
 }
 
+.intro-text {
+	margin: 20px auto;
+	margin-bottom: 40px;
+	width: 750px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+
+
+.mediabox {
+	margin: 0 auto;
+	width: 280px;
+}
+
+.mediabox div span {
+	display: block;
+	margin: 20px auto;
+	width: 280px;
+	text-align: left;
+}
+
+.mediabox .mediaimg {  /*There's gotta be a better way to do this using percents*/
+	margin: 0 auto;
+	border-radius: 3%;
+	width: 280px;
+	height: 146px;
+	background-color: black;
+}
+
+.mediabox .mediaimg img {
+	margin: 56.8px 0;
+	width: 60%;
+}
+.mediabox .mediasource span {
+	font-size: 12px;
+	font-weight: 300px;
+	color: #7c5fc4;
+}
+
+.mediabox .mediaheadline span {
+	font-weight: 600px;
+}
+
 /*
 
 
@@ -166,6 +223,14 @@ footer {
 	background-color: #7c5fc4;
 	padding: 30px 30px; 
 	color: #0bc0aa;
+}
+
+footer .siimple-grid {
+	margin: 7.65px 0;
+}
+
+footer #footerlogoname {
+	font-weight: 700;
 }
 
 footer .footericons {

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>IncentHealth | Patient Landing Page</title>
+		<title>IncentHealth | Get Healthy, Get Rewards</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
 		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -16,7 +16,7 @@
 	</head>
 
 	<body>
-		<div id="pagewrapper">
+		<div id="pagewrapper">	
 		<header>
 			<nav>
 				<div class="logowrapper"><a href="./index.html"><img src="img/incenthealth_logo.png"/></a></div>
@@ -30,18 +30,36 @@
 				</ul>
 			</nav>
 		</header>
-
 		<div class="mainbody">
-			<h2>Complete Patient Sign Up</h2><br>
-			<h1>Your provider <span class="providerText"></span> invited you for IncentHealth on <span class="providerInviteTime"></span> </h1>
-			<!--First Name: <input class="firstNameInput" type="text" name="Name"><br>                Maybe gray this out? Or could just put as plain text
-			Last Name: <input class="lastNameInput" type="text" name="Name"><br>
-			Email: <input class="emailInput" type="text" name="Email"><br>
-			Address: <input class="addressInput" type="text" name="Address"><br> --> <!--TEMPORARY FOR UPORT--> 
-			<form class="startForm"> 
-				<input class="startButton siimple-btn" type="submit" value="Let's get started!"/>
-			</form>		
-
+			<div class="mainiconwrapper">
+				<img src="img/icon-only.png"/>
+			</div>
+			<h1>Get wealthy getting healthy</h1>
+			<p class="intro-text">Vision: <br>financial inclusion and healthy lifestyle choices are vital to an individual&#8217s well-being.
+				<br>*2 billion people worldwide do not have access to basic financial services.
+				<br>*400 million individuals do not have access to essential health services.
+				<br><br>Mission:
+				<br>*aims to improve health behavior through incentives
+				<br>*fosters new healthcare payment mechanisms for underserved markets.
+			</p>
+			<div class="hr"></div>
+			<h1>Media</h1>
+			
+			<div class="mediabox">
+				<a href="https://www.coindesk.com/better-off-abroad-blockchain-health-firms-are-gaining-ground-outside-the-us/">
+					<div class="mediawrapper">
+						<div class="mediaimg">
+							<img src="img/coindesk_logo.png"/>
+						</div>
+						<div class="mediasource">
+							<span>COINDESK</span>
+						</div>
+						<div class="mediaheadline">
+							<span>Better Off Abroad? Blockchain Health Firms Gain Ground Outside the US</span>
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 		</div>
 		<footer>
@@ -63,8 +81,10 @@
 				</div>
 			</div>
 		</footer>
+ 		<script type="text/javascript" src="uport_js/web3.js"></script>
+    	<script type="text/javascript" src="uport_js/uport-connect.js"></script>		
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 		<script src="js/web3.min.js"></script>
-		<script src="js/patientscript.js"></script>
+		<script src="js/patientloginscript.js"></script>
 	</body>
 </html>
