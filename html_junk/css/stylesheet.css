@@ -148,6 +148,10 @@ header nav ul li a:hover {
 	color: #FFFAFA;
 }
 
+.siimple-input--disabled {
+	background-color: #c3d7ef;
+}
+
 /*
 
 
