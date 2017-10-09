@@ -1,8 +1,8 @@
 <?php
 
 	//Get info sent from patientscript2S.js
-	$incentivetype=($_POST['incentiveselect']);
 	$address=($_POST['address']);
+	$incentivetype=($_POST['incentivetype']);
 	echo $incentivetype;
 	echo "\n" . $address;
 	//Setting up variables

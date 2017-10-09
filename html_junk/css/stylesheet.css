@@ -210,6 +210,8 @@ header nav ul li a:hover {
 }
 
 
+/* ===================== PROVIDER PORTAL ======================= */
+
 .providerportal {
 	text-align:left;
 }
@@ -229,6 +231,30 @@ header nav ul li a:hover {
 	font-size: 12px;
 }
 
+/* ===================== PATIENT PORTAL ======================= */
+
+.patientportal {
+	text-align:left;
+}
+
+.patientportal .patientportal-actions {
+
+	list-style-type: none;
+}
+
+.patientportal .patientportal-settings {
+
+	list-style-type: none;
+}
+
+.patientportal .patientportal-lastlogin {
+	float: right;
+	font-size: 12px;
+}
+
+
+
+
 .patientsigninspan {
 	display: block; 
 	margin: 0 auto; 
@@ -236,6 +262,8 @@ header nav ul li a:hover {
 	font-size: 48px; 
 	font-weight: 600;
 }
+
+
 
 
 /*

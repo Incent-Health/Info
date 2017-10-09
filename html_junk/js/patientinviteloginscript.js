@@ -39,6 +39,6 @@ const uportConnect = function () {
     .then((credentials) => {
     	var address = credentials.address;
     	console.log(address);
-    	window.location.href = "./patientportal.html?address=" + address;
+    	window.location.href = "./patientinvite.html?address=" + address;
     })
 }

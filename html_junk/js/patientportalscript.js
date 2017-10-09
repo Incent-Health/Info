@@ -1,7 +1,7 @@
 // $("header div, .mainbody *").hide();
 // $("header div, .mainbody *").fadeIn(900);
 
-var providerAddress = getUrlParameter('address');
+var patientAddress = getUrlParameter('address');
 
 loadProviderInfo();
 updatePortalLinks();
@@ -24,22 +24,22 @@ updatePortalLinks();
 // };
 
 function loadProviderInfo(){
-	var data = "address=" + providerAddress;
- 	$.post("php/getProviderInfo.php", data, function(data){ 
+	var data = "address=" + patientAddress;
+ 	$.post("php/getPatientInfo.php", data, function(data){ 
  		var data = data.split("|");
- 		var name = data[0];
+ 		var first_name = data[0];
  		var timestamp = data[1];
 
- 		$(".providername").text(name);
- 		$(".providerportal-uportaddress").append(providerAddress);
- 		$(".providerportal-lastlogin").append(timestamp);
+ 		$(".patientname").text(first_name);
+ 		$(".patientportal-uportaddress").append(patientAddress);
+ 		$(".patientportal-lastlogin").append(timestamp);
  	});
 }
 
 function updatePortalLinks(){
-	$(".providerportal a").each(function(i){
+	$(".patientportal a").each(function(i){
 		var link = $(this).attr("href");
-		$(this).attr("href", link + "?address=" + providerAddress);
+		$(this).attr("href", link + "?address=" + patientAddress);
 	});
 }
 

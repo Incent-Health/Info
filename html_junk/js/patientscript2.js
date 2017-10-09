@@ -1,15 +1,15 @@
 // $("header div, .mainbody *").hide();
 // $("header div, .mainbody *").fadeIn(900);
 
-var incentiveselect;
+var incentivetype;
 var patientAddress = getUrlParameter('address');
 
 $(".submitForm").submit(function(e){
 	e.preventDefault();
-	incentiveselect = $(".incentiveSelect").val();
-	console.log("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+	incentivetype = $(".incentiveSelect").val();
+	console.log('?address=' + patientAddress + '&incentivetype=' + incentivetype);
 	var link = "./patient3.html";
-	location.href = link + '?address=' + patientAddress + '&incentivetype=' + incentiveselect;
+	location.href = link + '?address=' + patientAddress + '&incentivetype=' + incentivetype;
 });
 
 function getUrlParameter(name) {
