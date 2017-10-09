@@ -3,6 +3,8 @@
 
 var providerAddress = getUrlParameter('address');
 
+loadProviderInfo();
+
 // $(".submitForm").submit(function(e){
 // 	e.preventDefault();
 // 	incentiveselect = $(".incentiveSelect").val();
@@ -28,6 +30,7 @@ function loadProviderInfo(){
  		var timestamp = data[1];
 
  		$(".providername").text(name);
+ 		$(".providerportal-uportaddress").append(providerAddress);
  		$(".providerportal-lastlogin").append(timestamp);
  	});
 }
