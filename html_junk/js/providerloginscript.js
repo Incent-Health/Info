@@ -9,7 +9,7 @@ const appName = "IncentHealth - App";
 var connect;
 
 
-const uportConnect = function () {
+const uportConnect = function() {
 
     connect = new Connect("IncentHealth - App", {
         clientId: "2og7ypfrpDj8Un8FTzPpwUSCat7e3Js3LU5",
@@ -29,27 +29,29 @@ const uportConnect = function () {
     })  
 }
 
-function checkProviderAddress(address){
-     if(isProviderAddressMySQL(address)){
-            succesfulLogin();
+function checkProviderAddress(address){   
+     isProviderAddressMySQL(address, function(isProviderAddress) {   //CALLBACKS ARE DISGUSTING AHHH
+        if(isProviderAddress){
+            successfulLogin(address);
         } else {
             alert("ERROR: Address not recognized as a provider.");
         }
+    });
 }
 
-function successfulLogin(){
+function successfulLogin(address){
     window.location.href = "./providerportal.html?address=" + address;
 }
 
-function isProviderAddressMySQL(address){
+function isProviderAddressMySQL(address, callback){
 
     var data = "address=" + address;
     $.post('php/isProviderAddress.php', data, function(data){
         console.log(data);
-        if(data == "true"){
-            return true;
+        if(data === "true"){
+            callback(true);
         } else {
-            return false;
+            callback(false);
         }
     }); //NEED WAY TO ADD CONDITIONALS, I.E. CHECK FOR DATABASE INSERT ERRORS AND REPORT APPROPRIATE RESULT TO USER
 }
