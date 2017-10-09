@@ -9,10 +9,18 @@ getInfoPHP(patientAddress);
 
 $(".confirmForm").submit(function(e){
 	e.preventDefault();
-	var link = "./patient4.html";
+
+	sendPatientInviteInfoMySQL("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+	var link = "./patient_thankyou.html";
 	location.href = link;
 
 });
+
+function sendPatientInviteInfoMySQL(data){ //read about JS Asynchronous nature
+	$.post("php/insertPatientInviteInfo.php", data, function(data){ 
+		console.log(data);
+	});
+};
 
 function getInfoPHP(patientAddress){ //read about JS Asynchronous nature
 	$.post("php/getInfo.php", data, function(data){ 
