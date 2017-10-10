@@ -21,12 +21,11 @@ Video demo: http://sunquyman.xyz/incenthealth/html_junk/vid/prototype_video.mp4
 
 
 **References**
-*
  <br>
-1. World Health Organization. (2015). Tracking universal health coverage: First global monitoring report. Joint WHO/World Bank Group report, June 2015. 
+ 1. World Health Organization. (2015). Tracking universal health coverage: First global monitoring report. Joint WHO/World Bank Group report, June 2015. 
 <br>
 2. Centers for Disease Control and Prevention (2010) Vital signs: Current cigarette smoking among adults aged ≥18 years—United States, 2009. MMWR 59(35): 1135–1140.Centers for Disease Control and Prevention2010Vital signs: Current cigarette smoking among adults aged ≥18 years—United States, 2009.
-  <br>
+<br>
 3. Rostron BL, Chang CM, Pechacek TF. Estimation of cigarette smoking-attributable morbidity in the United States. JAMA Intern Med 2014;174:1922-1928
 <br>
 4. Kevin G. Volpp, M.D., Ph.D., David A. Asch, M.D., M.B.A., Robert Galvin, M.D., M.B.A., and George Loewenstein, Ph.D. N Engl J Med 2011; 365:388-390August 4, 2011DOI: 10.1056/NEJMp1105966
@@ -43,4 +42,3 @@ Video demo: http://sunquyman.xyz/incenthealth/html_junk/vid/prototype_video.mp4
 <br>
 10. Finland provides blockchain identity and financial inclusion - asylum seekers. Available at https://www.technologyreview.com/s/608764/how-blockchain-is-kickstarting-the-financial-lives-of-refugees/
 <br>
-*
