@@ -1,16 +1,25 @@
 // $("header div, .mainbody *").hide();
 // $("header div, .mainbody *").fadeIn(900);
 
-var incentivetype;
+var incentiveselect;
 var patientAddress = getUrlParameter('address');
 
 $(".submitForm").submit(function(e){
 	e.preventDefault();
-	incentivetype = $(".incentiveSelect").val();
-	console.log('?address=' + patientAddress + '&incentivetype=' + incentivetype);
+	incentiveselect = $(".incentiveSelect").val();
+	console.log("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
 	var link = "./patient3.html";
-	location.href = link + '?address=' + patientAddress + '&incentivetype=' + incentivetype;
+	location.href = link + '?address=' + patientAddress + '&incentivetype=' + incentiveselect;
 });
+
+
+
+function sendIncentiveSelectToPHP(dataInput){ //read about JS Asynchronous nature
+	$.post("php/insertIncentiveType.php", dataInput, function(data){ 
+		console.log(data);
+	});
+};
 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');

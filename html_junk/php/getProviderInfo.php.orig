@@ -11,16 +11,25 @@
 	//Connect to server with mysqli and select database
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
+<<<<<<< HEAD:html_junk/php/getProviderInfo.php
+=======
+
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239:html_junk/php/getProviderInfo.php
 	$result = $mysqli->query("SELECT name, last_login_timestamp FROM providerData WHERE uport_address = \"" . $providerAddress . "\"");
 	//echo("SELECT health_provider, provider_invite_timestamp FROM patientData WHERE uport_address = \"" . $patientAddress . "\";");
 	//$providertimestamp = $mysqli->query("SELECT provider_invite_timestamp FROM patientData WHERE uport_address = \"" . patientAddress .	 "\";");
 
+<<<<<<< HEAD:html_junk/php/getProviderInfo.php
 	$mysqli->query("UPDATE providerData SET last_login_timestamp = CURRENT_TIMESTAMP WHERE uport_address = \"" . $providerAddress . "\"");
 
 	while($row = $result->fetch_assoc()){ 
 		echo $row['name'] . "|" . $row['last_login_timestamp'];
 	}
 
-	//echo $row['health_provider'] . "|" . $row['provider_invite_timestamp'];
+=======
+	while($row = $result->fetch_assoc()){ 
+		echo $row['name'] . "|" . $row['last_login_timestamp'];
+	}
 
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239:html_junk/php/getProviderInfo.php
 ?>

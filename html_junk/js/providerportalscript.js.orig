@@ -1,0 +1,60 @@
+// $("header div, .mainbody *").hide();
+// $("header div, .mainbody *").fadeIn(900);
+
+var providerAddress = getUrlParameter('address');
+
+<<<<<<< HEAD
+loadProviderInfo();
+updatePortalLinks();
+
+=======
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
+// $(".submitForm").submit(function(e){
+// 	e.preventDefault();
+// 	incentiveselect = $(".incentiveSelect").val();
+// 	console.log("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+// 	sendIncentiveSelectToPHP("incentiveselect=" + incentiveselect + "&address=" + patientAddress);
+// 	var link = "./patient3.html";
+// 	location.href = link + '?address=' + patientAddress + '&incentivetype=' + incentiveselect;
+// });
+
+
+
+// function sendIncentiveSelectToPHP(dataInput){ //read about JS Asynchronous nature
+// 	$.post("php/insertIncentiveType.php", dataInput, function(data){ 
+// 		console.log(data);
+// 	});
+// };
+
+function loadProviderInfo(){
+	var data = "address=" + providerAddress;
+ 	$.post("php/getProviderInfo.php", data, function(data){ 
+ 		var data = data.split("|");
+ 		var name = data[0];
+ 		var timestamp = data[1];
+
+ 		$(".providername").text(name);
+<<<<<<< HEAD
+ 		$(".providerportal-uportaddress").append(providerAddress);
+=======
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
+ 		$(".providerportal-lastlogin").append(timestamp);
+ 	});
+}
+
+<<<<<<< HEAD
+function updatePortalLinks(){
+	$(".providerportal a").each(function(i){
+		var link = $(this).attr("href");
+		$(this).attr("href", link + "?address=" + providerAddress);
+	});
+}
+
+=======
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};

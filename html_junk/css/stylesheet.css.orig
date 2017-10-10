@@ -1,0 +1,310 @@
+html {
+	height: 100%;
+}
+
+body {
+
+	margin: 0;
+	height: 100%;
+	font-family: 'Open Sans';
+	background-color: #0bc0aa;
+	color: #FFFAFA;
+
+}
+
+#pagewrapper {
+	min-height: 100%;
+	/*position: relative;*/
+}
+
+header {
+
+	text-align: center;
+	background-color: #333333;
+	height: 82px;
+	padding: 0px 20px;
+
+}
+
+a {
+	text-decoration: none;
+	color: #FFFAFA;
+}
+
+a:hover {
+	color: lightgray;
+}
+
+/*.logowrapper {
+
+	height:200px;
+	width:200px;
+	display:inline-block;
+	margin: 50px 0;
+	padding: 50px;
+	background-color: white;
+	border-radius: 50%;
+
+}
+
+.logowrapper img {
+
+	width: 200px;
+	margin-top: 20px;
+
+}*/
+
+.logowrapper {
+	display: block;
+	float: left;
+}
+
+.logowrapper a {
+	display: block;
+	height: 72px; /*DON'T DO THIS HARD-CODING TERRIBLE TERRIBLE TERRIBLE I CAN'T CSS LOLOLOLOL*/
+	padding: 5px 5px;
+}
+
+.logowrapper ul a:hover {
+	background-color: #111111;
+}
+
+.logowrapper a img {
+	height: 72px;
+}
+
+.headerspace1 {
+
+	display: block;
+	height: 82px;
+	width: 50px;
+	float: left;
+
+}
+
+header nav {
+
+}
+
+header nav ul {
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li {
+	float: left;
+}
+
+header nav ul li a {
+	display: block;
+	color: #FFFAFA;
+	text-align: center;
+	padding: 30px 22px;
+	text-decoration: none;
+}
+
+header nav ul li a:hover {
+	background-color: #111111;
+}
+
+
+/*
+
+
+============================= MAIN BODY ============================
+
+
+*/
+
+
+.mainbody {
+
+	text-align: center;
+	color: #FFFAFA;
+	margin: 100px 100px;
+}
+
+.mainbody h1 {
+	margin: 40px 0;
+}
+
+.mainbody h2 {
+
+	font-size: 34px;
+	margin-bottom: 30px;
+}
+
+.mainbody .hr {
+	margin: 0 auto;
+	width: 25%;
+	border-bottom: 1px solid #FFFAFA;
+}
+
+.mainbody .inputwrapper {
+	margin: 10px 0px;
+}
+
+.mainbody .mainiconwrapper img {
+	height: 140px;
+}
+
+.mainbody .siimple-btn {
+	background-color: #7c5fc4;
+	color: #FFFAFA;
+	margin: 10px 0px;
+
+}
+
+.mainbody .siimple-label {
+	color: #FFFAFA;
+}
+
+.siimple-input--disabled {
+	background-color: #c3d7ef;
+}
+
+.intro-text {
+	margin: 20px auto;
+	margin-bottom: 40px;
+	width: 750px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+
+
+.mediabox {
+	margin: 0 auto;
+	width: 280px;
+}
+
+.mediabox div span {
+	display: block;
+	margin: 20px auto;
+	width: 280px;
+	text-align: left;
+}
+
+.mediabox .mediaimg {  /*There's gotta be a better way to do this using percents*/
+	margin: 0 auto;
+	border-radius: 3%;
+	width: 280px;
+	height: 146px;
+	background-color: black;
+}
+
+.mediabox .mediaimg img {
+	margin: 56.8px 0;
+	width: 60%;
+}
+.mediabox .mediasource span {
+	font-size: 12px;
+	font-weight: 300px;
+	color: #7c5fc4;
+}
+
+.mediabox .mediaheadline span {
+	font-weight: 600px;
+}
+
+
+<<<<<<< HEAD
+/* ===================== PROVIDER PORTAL ======================= */
+
+=======
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
+.providerportal {
+	text-align:left;
+}
+
+.providerportal .providerportal-actions {
+
+	list-style-type: none;
+}
+
+.providerportal .providerportal-settings {
+
+	list-style-type: none;
+}
+
+.providerportal .providerportal-lastlogin {
+	float: right;
+	font-size: 12px;
+}
+
+<<<<<<< HEAD
+/* ===================== PATIENT PORTAL ======================= */
+
+.patientportal {
+	text-align:left;
+}
+
+.patientportal .patientportal-actions {
+
+	list-style-type: none;
+}
+
+.patientportal .patientportal-settings {
+
+	list-style-type: none;
+}
+
+.patientportal .patientportal-lastlogin {
+	float: right;
+	font-size: 12px;
+}
+
+
+
+
+.patientsigninspan {
+	display: block; 
+	margin: 0 auto; 
+	padding: 50px 0; 
+	font-size: 48px; 
+	font-weight: 600;
+}
+
+
+
+=======
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
+
+/*
+
+
+============================= FOOTER ============================
+
+
+*/
+
+
+footer {
+	height:100px;	
+	background-color: #7c5fc4;
+	padding: 30px 30px; 
+	color: #0bc0aa;
+}
+
+footer .siimple-grid {
+	margin: 7.65px 0;
+}
+
+footer #footerlogoname {
+	font-weight: 700;
+}
+
+footer .footericons {
+	display: inline-block;
+	float: right;
+}
+
+footer .footericons img {
+	height: 24px;
+	margin: 0px 5px
+}
+
+
+/*#0bc0aa -green- and #7c5fc4 -purple-*/

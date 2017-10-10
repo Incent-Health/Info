@@ -16,7 +16,7 @@
 	</head>
 
 	<body>
-		<div id="pagewrapper">	
+		<div id="pagewrapper">
 		<header>
 			<nav>
 				<div class="logowrapper"><a href="./index.html"><img src="img/incenthealth_logo.png"/></a></div>
@@ -24,22 +24,29 @@
 				<ul>
 					<li><a href="./index.html">Home</a></li>
 					<li><a href="./patientlogin.html">Patients</a></li>
+<<<<<<< HEAD
 					<li><a href="./providerlogin.html">Providers</a></li>
 					<li><a href="./about.html">About Us</a></li>
 					<li><a href="./contact.html">Contact</a></li>
+=======
+					<li><a href="./provider.html">Providers</a></li>
+					<li><a href="./aboutus.html">About Us</a></li>
+					<li><a href="./contactus.html">Contact</a></li>
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
 				</ul>
 			</nav>
 		</header>
 
 		<div class="mainbody">
-			<h2>Sign in to Patient Portal</h2><br>
-			<h1>Click "Sign in" to confirm your identity with uPort:</h1>
-				<input class="signInButton siimple-btn" type="submit" value="Sign in" onclick="uportConnect()"/>
-	
+			<h2>Complete Patient Sign Up</h2><br>
+			<h1>Your provider <span class="providerText"></span> invited you for IncentHealth on <span class="providerInviteTime"></span> </h1>
 			<!--First Name: <input class="firstNameInput" type="text" name="Name"><br>                Maybe gray this out? Or could just put as plain text
 			Last Name: <input class="lastNameInput" type="text" name="Name"><br>
 			Email: <input class="emailInput" type="text" name="Email"><br>
 			Address: <input class="addressInput" type="text" name="Address"><br> --> <!--TEMPORARY FOR UPORT--> 
+			<form class="startForm"> 
+				<input class="startButton siimple-btn" type="submit" value="Let's get started!"/>
+			</form>		
 
 		</div>
 		</div>
@@ -62,10 +69,8 @@
 				</div>
 			</div>
 		</footer>
- 		<script type="text/javascript" src="uport_js/web3.js"></script>
-    	<script type="text/javascript" src="uport_js/uport-connect.js"></script>		
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 		<script src="js/web3.min.js"></script>
-		<script src="js/patientloginscript.js"></script>
+		<script src="js/patientscript.js"></script>
 	</body>
 </html>

@@ -30,11 +30,14 @@
 				</ul>
 			</nav>
 		</header>
-
 		<div class="mainbody">
 			<h2>Sign in to Patient Portal</h2><br>
 			<h1>Click "Sign in" to confirm your identity with uPort:</h1>
+<<<<<<< HEAD
 				<input class="signInButton siimple-btn" type="submit" value="Sign in" onclick="uportConnect()"/>
+=======
+				<input class="signInButton siimple-btn" type="submit" value="Let's get started!" onclick="uportConnect()"/>
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
 	
 			<!--First Name: <input class="firstNameInput" type="text" name="Name"><br>                Maybe gray this out? Or could just put as plain text
 			Last Name: <input class="lastNameInput" type="text" name="Name"><br>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>IncentHealth | Patient Landing Page</title>
+		<title>IncentHealth | Provider Login</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
 		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -16,7 +16,7 @@
 	</head>
 
 	<body>
-		<div id="pagewrapper">	
+		<div id="pagewrapper">
 		<header>
 			<nav>
 				<div class="logowrapper"><a href="./index.html"><img src="img/incenthealth_logo.png"/></a></div>
@@ -32,15 +32,15 @@
 		</header>
 
 		<div class="mainbody">
-			<h2>Sign in to Patient Portal</h2><br>
+<<<<<<< HEAD
+			<h1>Sign in to Provider Portal</h1>
 			<h1>Click "Sign in" to confirm your identity with uPort:</h1>
-				<input class="signInButton siimple-btn" type="submit" value="Sign in" onclick="uportConnect()"/>
-	
-			<!--First Name: <input class="firstNameInput" type="text" name="Name"><br>                Maybe gray this out? Or could just put as plain text
-			Last Name: <input class="lastNameInput" type="text" name="Name"><br>
-			Email: <input class="emailInput" type="text" name="Email"><br>
-			Address: <input class="addressInput" type="text" name="Address"><br> --> <!--TEMPORARY FOR UPORT--> 
-
+			<input class="signInButton siimple-btn" type="submit" value="Sign in" onclick="uportConnect()"/>
+=======
+			<h1>Provider Login</h1>
+			<h1>Click "Sign in" to confirm your identity with uPort:</h1>
+			<input class="signInButton siimple-btn" type="submit" value="Let's get started!" onclick="uportConnect()"/>
+>>>>>>> 572beee7b2ffa39f245436e6ab5b2947b71e4239
 		</div>
 		</div>
 		<footer>
@@ -62,10 +62,9 @@
 				</div>
 			</div>
 		</footer>
- 		<script type="text/javascript" src="uport_js/web3.js"></script>
-    	<script type="text/javascript" src="uport_js/uport-connect.js"></script>		
+		<script type="text/javascript" src="uport_js/web3.js"></script>
+    	<script type="text/javascript" src="uport_js/uport-connect.js"></script>	
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-		<script src="js/web3.min.js"></script>
-		<script src="js/patientloginscript.js"></script>
+		<script src="js/providerloginscript.js"></script>
 	</body>
 </html>
