@@ -4,7 +4,7 @@ setProviderPortalLink();
 
 function setProviderPortalLink(){
 	var link = $(".linkProviderPortal").attr("href");
-	$(".linkProviderPortal").attr(link + "?address=" + providerAddress);
+	$(".linkProviderPortal").attr("href",link + "?address=" + providerAddress);
 }
 
 function getUrlParameter(name) {
