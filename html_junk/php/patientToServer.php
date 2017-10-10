@@ -28,8 +28,11 @@
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
 	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,uport_address) VALUES('" . $firstname . "', '" . $lastname . "','" . $email . "','" . $address . "')");
-	echo $result->execute() + "|"; //See if insert was successful or not
-
+	echo $result; //See if insert was successful or not
+	echo "|";
+	if(!$result){
+		exit();
+	}
 
 
 	/*

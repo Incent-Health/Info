@@ -91,8 +91,9 @@ function sendPatientDatatoMySQL(){
     $.post('php/patientToServer.php', data, function(data){
         console.log(data + "\n");
         var data = data.split("|");
-        if(data[0] === "true"){
-            location.href = link + "?address=" + providerAddress;
+        console.log("PHP RETURN: " + data[0] + " " + typeof data[0]);
+        if(data[0] === "1"){
+            location.href = "./provider_patientinvitesuccess.html" + "?address=" + providerAddress;
         } else {
             alert("ERROR: User insert failed. Is user already registered with IncentHealth? Please try to delete any existing entries before trying again.");
         }
