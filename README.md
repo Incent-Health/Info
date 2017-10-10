@@ -14,14 +14,17 @@ Incentives create a positive network effect by encouraging longer term patient-c
 Smart contracts allow verified parties to enter into an agreement whereby payments are made from the donor wallet to the smart contract wallet, which is then paid out to the patient wallet upon verification of health goals. 
 
 For details of our proposal: https://devpost.com/software/medpaytoken-healthcare-financial-inclusion 
+<br>
 Homepage: http://sunquyman.xyz/incenthealth/
+<br>
 Video demo: http://sunquyman.xyz/incenthealth/html_junk/vid/prototype_video.mp4
 
 
-References
+**References**
+*
  <br>
 1. World Health Organization. (2015). Tracking universal health coverage: First global monitoring report. Joint WHO/World Bank Group report, June 2015. 
-  <br>
+<br>
 2. Centers for Disease Control and Prevention (2010) Vital signs: Current cigarette smoking among adults aged ≥18 years—United States, 2009. MMWR 59(35): 1135–1140.Centers for Disease Control and Prevention2010Vital signs: Current cigarette smoking among adults aged ≥18 years—United States, 2009.
   <br>
 3. Rostron BL, Chang CM, Pechacek TF. Estimation of cigarette smoking-attributable morbidity in the United States. JAMA Intern Med 2014;174:1922-1928
@@ -40,3 +43,4 @@ References
 <br>
 10. Finland provides blockchain identity and financial inclusion - asylum seekers. Available at https://www.technologyreview.com/s/608764/how-blockchain-is-kickstarting-the-financial-lives-of-refugees/
 <br>
+*
