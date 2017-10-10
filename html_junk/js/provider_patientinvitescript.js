@@ -85,7 +85,7 @@ function checkButtonEnabled(){
 
 function sendPatientDatatoMySQL(){
 
-    var data = "firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&address=" + address;
+    var data = "firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&address=" + address + "&provideraddress=" + providerAddress;
     //xmlhttp.open("POST","patientToServer.php",true);
     console.log("PHP JS MARKER");
     $.post('php/patientToServer.php', data, function(data){

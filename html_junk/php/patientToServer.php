@@ -17,6 +17,7 @@
 	$lastname=($_POST['lastname']);
 	$email=($_POST['email']);
 	$address=($_POST['address']);
+	$provideraddress=($_POST['provideraddress']);
 
 	//Setting up variables
 	$username="luisjgkr_incenthealth";
@@ -27,7 +28,14 @@
 	//Connect to server with mysqli and select database
 	$mysqli = new mysqli($serverURL,$username,$password,$database);
 
-	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,uport_address) VALUES('" . $firstname . "', '" . $lastname . "','" . $email . "','" . $address . "')");
+	$idresult= $mysqli->query("SELECT id FROM providerData WHERE uport_address = \"" . $provideraddress . "\"");
+	$id;
+	while($row = $idresult->fetch_assoc()){ 
+		$id = $row['id'];
+	}
+
+
+	$result = $mysqli->query("INSERT INTO patientData (first_name,last_name,email,health_provider_id,uport_address) VALUES('" . $firstname . "', '" . $lastname . "','" . $email . "','" . $id . "','" . $address . "')");
 	echo $result; //See if insert was successful or not
 	echo "|";
 	if(!$result){
