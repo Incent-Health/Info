@@ -14,6 +14,7 @@ const appName = "IncentHealth - App";
 //     })
 var connect;
 
+
 const uportConnect = function() {
 
     connect =  new Connect("IncentHealth - App", {
