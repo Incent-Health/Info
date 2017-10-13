@@ -180,6 +180,10 @@ header nav ul li a:hover {
 	width: 280px;
 }
 
+.mediabox a {
+	display: block;
+}
+
 .mediabox div span {
 	display: block;
 	margin: 20px auto;
